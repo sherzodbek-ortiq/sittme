@@ -4,13 +4,17 @@ FROM ruby:2.6.10
 # ~ 23.67 MB
 # FROM ruby:2.6.10-alpine
 
+WORKDIR "/app"
+
 # RUN apt install build-essential
 
 # For VS Code Ruby solargraph extension
 RUN gem install solargraph
 
+#RUN gem install benchmark-ips
+
 COPY ./Gemfile ./
 
-RUN bundle install
+COPY ./Gemfile.lock ./
 
-#RUN gem install benchmark-ips
+RUN bundle install

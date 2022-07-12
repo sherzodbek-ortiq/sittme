@@ -14,6 +14,18 @@ Ruby on Rails<br>
 Postgres<br>
 
 ## How to make it work
+**For VS Code remote container development environment:**<br>
+Install VS Code remote containers extension.<br>
+Create VS Code remote container configurations from **docker-compose-vs_code.yml**.<br>
+Choose servise (for rails app choose **api**).<br>
+Open the project root folder in container from VS Code remote containers extension command pallete.<br>
+Install all the host VS Code's stack related extensions within container,<br>
+settings are kept in **devcontainer.json**.<br>
+Now the VS code development environment within container is ready to use.<br>
+Don't forget to run migrations before starting server: `rails db:migrate`.<br>
+Fire up rails server with: `rails server --binding 0.0.0.0 --port 3000`.<br>
+You may need to remove manually the `<rails app root folder>/tmp/pids/server.pid` to successfully start the server.<br><br>
+
 **For development environment:**<br>
 cd to project root folder.<br>
 We have 2 containers in development environment.<br>

@@ -1,6 +1,6 @@
 version: "3"
 services:
-  db:
+  postgres:
     image: 'postgres:latest'
     # Database name, user name, user password are taken from those environment variables.
     # Database is created there and no need to run rails db:create.
