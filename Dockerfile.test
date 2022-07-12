@@ -1,0 +1,17 @@
+# ~ 301.59 MB
+FROM ruby:2.6.10
+
+# ~ 23.67 MB
+# FROM ruby:2.6.10-alpine
+
+WORKDIR "/app"
+
+COPY ./Gemfile ./
+
+COPY ./Gemfile.lock ./
+
+RUN bundle install
+
+COPY ./ ./
+
+CMD rails db:migrate && bundle exec rspec

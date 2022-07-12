@@ -1,0 +1,19 @@
+# ~ 301.59 MB
+FROM ruby:2.6.10
+
+# ~ 23.67 MB
+# FROM ruby:2.6.10-alpine
+
+WORKDIR "/app"
+
+COPY ./Gemfile ./
+
+COPY ./Gemfile.lock ./
+
+RUN bundle install
+
+COPY ./ ./
+
+# Server has to listen to ip 0.0.0.0 within the container. Because the access from outside the container will not arrive via 127.0.0.1/localhost.
+# By default in development rails will listen to ip 127.0.0.1/localhost.
+CMD rails db:migrate && rails server --binding 0.0.0.0 --port 3000 -e development
