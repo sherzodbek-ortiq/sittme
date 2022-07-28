@@ -49,7 +49,6 @@ Rebuild images + create and run containers:<br>
 List services:<br>
 `docker-compose -f ./docker-compose-test.yml ps`<br><br>
 
-
 **Route to create babysitter**<br>
 Post first_name and last_name to `localhost:3000/api/v1/babysitters`<br>
 last_name is optional, first_name is requred.<br><br>
