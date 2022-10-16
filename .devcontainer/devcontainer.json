@@ -14,9 +14,6 @@
 			"extensions": [
 				"rebornix.ruby",
 				"castwide.solargraph",
-				"bung87.vscode-gemfile",
-				"aki77.rails-db-schema",
-				"bung87.rails",
 				"wingrunr21.vscode-ruby"
 			]
 		}
